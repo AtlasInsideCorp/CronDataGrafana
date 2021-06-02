@@ -99,10 +99,10 @@ $height-lg: 48;
 // Typography
 // -------------------------
 
-$font-family-sans-serif: "Roboto", "Helvetica", "Arial", sans-serif;
-$font-family-monospace: 'Roboto Mono', monospace;
+$font-family-sans-serif: Poppins, Helvetica, "sans-serif";
+$font-family-monospace: Poppins, Helvetica, "sans-serif";
 
-$font-size-base: 14px !default;
+$font-size-base: 13px !default;
 
 $font-size-lg: 18px !default;
 $font-size-md: 14px !default;
@@ -111,8 +111,8 @@ $font-size-xs: 10px !default;
 
 $line-height-base: 1.5 !default;
 
-$font-weight-regular: 400 !default;
-$font-weight-semi-bold: 500 !default;
+$font-weight-regular: 300 !default;
+$font-weight-semi-bold: 400 !default;
 
 $font-size-h1: 2rem !default;
 $font-size-h2: 1.7142857142857142rem !default;

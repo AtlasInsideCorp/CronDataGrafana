@@ -126,7 +126,7 @@ func (hs *HTTPServer) getAppLinks(c *models.ReqContext) ([]*dtos.NavLink, error)
 }
 
 func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dtos.NavLink, error) {
-	hasAccess := ac.HasAccess(hs.AccessControl, c)
+	// 	hasAccess := ac.HasAccess(hs.AccessControl, c)
 	navTree := []*dtos.NavLink{}
 
 	if hasEditPerm {
@@ -252,25 +252,25 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
-	if hasAccess(ac.ReqOrgAdmin, ac.ActionOrgUsersRead, ac.ScopeUsersAll) {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Users",
-			Id:          "users",
-			Description: "Manage org members",
-			Icon:        "user",
-			Url:         hs.Cfg.AppSubURL + "/org/users",
-		})
-	}
-
-	if c.OrgRole == models.ROLE_ADMIN || (hs.Cfg.EditorsCanAdmin && c.OrgRole == models.ROLE_EDITOR) {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Teams",
-			Id:          "teams",
-			Description: "Manage org groups",
-			Icon:        "users-alt",
-			Url:         hs.Cfg.AppSubURL + "/org/teams",
-		})
-	}
+	// 	if hasAccess(ac.ReqOrgAdmin, ac.ActionOrgUsersRead, ac.ScopeUsersAll) {
+	// 		configNodes = append(configNodes, &dtos.NavLink{
+	// 			Text:        "Users",
+	// 			Id:          "users",
+	// 			Description: "Manage org members",
+	// 			Icon:        "user",
+	// 			Url:         hs.Cfg.AppSubURL + "/org/users",
+	// 		})
+	// 	}
+	//
+	// 	if c.OrgRole == models.ROLE_ADMIN || (hs.Cfg.EditorsCanAdmin && c.OrgRole == models.ROLE_EDITOR) {
+	// 		configNodes = append(configNodes, &dtos.NavLink{
+	// 			Text:        "Teams",
+	// 			Id:          "teams",
+	// 			Description: "Manage org groups",
+	// 			Icon:        "users-alt",
+	// 			Url:         hs.Cfg.AppSubURL + "/org/teams",
+	// 		})
+	// 	}
 
 	if c.OrgRole == models.ROLE_ADMIN {
 		configNodes = append(configNodes, &dtos.NavLink{
@@ -309,20 +309,20 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
-	adminNavLinks := hs.buildAdminNavLinks(c)
+	// 	adminNavLinks := hs.buildAdminNavLinks(c)
 
-	if len(adminNavLinks) > 0 {
-		navTree = append(navTree, &dtos.NavLink{
-			Text:         "Server Admin",
-			SubTitle:     "Manage all users and orgs",
-			HideFromTabs: true,
-			Id:           "admin",
-			Icon:         "shield",
-			Url:          adminNavLinks[0].Url,
-			SortWeight:   dtos.WeightAdmin,
-			Children:     adminNavLinks,
-		})
-	}
+	// 	if len(adminNavLinks) > 0 {
+	// 		navTree = append(navTree, &dtos.NavLink{
+	// 			Text:         "Server Admin",
+	// 			SubTitle:     "Manage all users and orgs",
+	// 			HideFromTabs: true,
+	// 			Id:           "admin",
+	// 			Icon:         "shield",
+	// 			Url:          adminNavLinks[0].Url,
+	// 			SortWeight:   dtos.WeightAdmin,
+	// 			Children:     adminNavLinks,
+	// 		})
+	// 	}
 
 	helpVersion := fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit)
 	if hs.Cfg.AnonymousHideVersion && !c.IsSignedIn {

@@ -104,3 +104,22 @@
 @import 'pages/plugins';
 @import 'old_responsive';
 @import 'components/view_states.scss';
+
+body {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  font-family: Poppins, Helvetica, 'sans-serif' !important;
+  -ms-text-size-adjust: 100% !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  background: #f2f3f7 !important;
+
+  h1,
+  .h1 {
+    font-family: Poppins, Helvetica, 'sans-serif' !important;
+  }
+
+  button {
+    font-family: Poppins, Helvetica, 'sans-serif' !important;
+  }
+}

@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#000" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="theme-color" content="#000"/>
 
     <title>[[.AppTitle]]</title>
 
-    <base href="[[.AppSubUrl]]/" />
+    <base href="[[.AppSubUrl]]/"/>
 
-    <link
-      rel="preload"
-      href="[[.ContentDeliveryURL]]public/fonts/roboto/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2"
-      as="font"
-      crossorigin
-    />
+    <!--    <link-->
+    <!--      rel="preload"-->
+    <!--      href="[[.ContentDeliveryURL]]public/fonts/roboto/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2"-->
+    <!--      as="font"-->
+    <!--      crossorigin-->
+    <!--    />-->
 
-    <link rel="icon" type="image/png" href="[[.FavIcon]]" />
-    <link rel="apple-touch-icon" sizes="180x180" href="[[.AppleTouchIcon]]" />
-    <link rel="mask-icon" href="[[.ContentDeliveryURL]]public/img/grafana_mask_icon.svg" color="#F05A28" />
-    <link rel="stylesheet" href="[[.ContentDeliveryURL]]public/build/grafana.[[ .Theme ]].<%= webpack.hash %>.css" />
+
+    <link rel="stylesheet" href="[[.ContentDeliveryURL]]public/fonts/poppins/Poppins-Regular.ttf"
+          as="font" crossorigin="">
+
+    <link rel="icon" type="image/png" href="[[.FavIcon]]"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="[[.AppleTouchIcon]]"/>
+    <link rel="mask-icon" href="[[.ContentDeliveryURL]]public/img/grafana_mask_icon.svg" color="#F05A28"/>
+    <link rel="stylesheet" href="[[.ContentDeliveryURL]]public/build/grafana.[[ .Theme ]].<%= webpack.hash %>.css"/>
 
     <script nonce="[[.Nonce]]">
       performance.mark('frontend_boot_css_time_seconds');
     </script>
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="msapplication-TileColor" content="#2b5797" />
-    <meta name="msapplication-config" content="public/img/browserconfig.xml" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="msapplication-TileColor" content="#2b5797"/>
+    <meta name="msapplication-config" content="public/img/browserconfig.xml"/>
+
+    <style>
+      body {
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        font-family: Poppins, Helvetica, "sans-serif" !important;
+        -ms-text-size-adjust: 100% !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
   </head>
 
   <body class="theme-[[ .Theme ]] [[.AppNameBodyClass]]">
